@@ -1,0 +1,21 @@
+$colors: (
+    DarkBlue: hsl(240, 38%, 20%),
+    GrayishBlue: hsl(240, 18%, 77%),
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+@mixin flexCenter($direction: row) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+}
+
+@mixin desktopSize {
+    @media only screen and (min-width: 850px) {
+        @content;
+    }
+}
