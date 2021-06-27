@@ -21,10 +21,10 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: clamp(1.8rem, 3vw, 3.2rem);
   font-weight: 300;
-  background: url("../images/pattern-bg.svg");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-position: 50% 1em;
+  background: url("../images/pattern-bg.svg"), url("../images/pattern-curve.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom left;
+  background-position: 50% 1em, bottom left;
   background-size: 85%;
   padding: 1.5em;
   line-height: 1.4;
@@ -32,6 +32,11 @@ body {
 
 .john,
 .john-img {
+  display: block;
+}
+
+.tanya,
+.tanya-img {
   display: none;
 }
 
@@ -68,6 +73,9 @@ body {
   max-width: -webkit-min-content;
   max-width: -moz-min-content;
   max-width: min-content;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 15px 20px rgba(0, 0, 0, 0.315);
+          box-shadow: 5px 15px 20px rgba(0, 0, 0, 0.315);
 }
 
 .img--wrap .button--wrap {
@@ -77,10 +85,18 @@ body {
           transform: translateY(30%);
 }
 
-.quote {
+.quote--outer-wrap {
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   grid-row: 3 / 4;
+  position: relative;
+}
+
+.quote--outer-wrap img {
+  position: absolute;
+  top: -1.5em;
+  left: 42%;
+  width: clamp(60px, 10vw, 120px);
 }
 
 .quote .quote--wrap {

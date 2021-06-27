@@ -22,10 +22,11 @@ body {
     font-size: clamp(1.8rem, 3vw, 3.2rem);
     // font-size: 1.8rem;
     font-weight: 300;
-    background: url("../images/pattern-bg.svg");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-position: 50% 1em;
+    background: url("../images/pattern-bg.svg"),
+        url("../images/pattern-curve.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top, bottom left;
+    background-position: 50% 1em, bottom left;
     background-size: 85%;
     padding: 1.5em;
     line-height: 1.4;
@@ -33,6 +34,11 @@ body {
 
 .john,
 .john-img {
+    display: block;
+}
+
+.tanya,
+.tanya-img {
     display: none;
 }
 
@@ -51,6 +57,8 @@ body {
     .john-img {
         width: 75%;
         max-width: min-content;
+        border-radius: 10px;
+        box-shadow: 5px 15px 20px rgba(0, 0, 0, 0.315);
     }
 
     .button--wrap {
@@ -65,8 +73,20 @@ body {
     }
 }
 
-.quote {
+.quote--outer-wrap {
     grid-row: 3 / 4;
+    // outline: solid red 2px;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: -1.5em;
+        left: 42%;
+        width: clamp(60px, 10vw, 120px);
+    }
+}
+.quote {
+    // grid-row: 3 / 4;
 
     .quote--wrap {
         @include flexCenter(column);
