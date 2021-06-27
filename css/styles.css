@@ -12,14 +12,120 @@ html {
 *::after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
-  margin: inherit;
+  margin: 0;
 }
 
 body {
   min-height: 100%;
   background: whitesmoke;
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 3.2rem;
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
   font-weight: 300;
+  background: url("../images/pattern-bg.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-position: 50% 1em;
+  background-size: 85%;
+  padding: 1.5em;
+  line-height: 1.4;
+}
+
+.john,
+.john-img {
+  display: none;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: auto 5em 10em;
+      grid-template-rows: auto 5em 10em;
+}
+
+.img--wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 1em;
+}
+
+.img--wrap .tanya-img,
+.img--wrap .john-img {
+  width: 75%;
+  max-width: -webkit-min-content;
+  max-width: -moz-min-content;
+  max-width: min-content;
+}
+
+.img--wrap .button--wrap {
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
+}
+
+.quote {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
+}
+
+.quote .quote--wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.quote .quote--wrap .quote__name--wrap {
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.quote .quote--wrap .quote__name--wrap .quote__name {
+  font-size: 1.6rem;
+}
+
+.quote .quote--wrap .quote__name--wrap .quote__job {
+  font-weight: 500;
+  color: #babacf;
+}
+
+.quote__p {
+  text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */

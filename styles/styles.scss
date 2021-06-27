@@ -12,13 +12,81 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
-    margin: inherit;
+    margin: 0;
 }
 
 body {
     min-height: 100%;
     background: whitesmoke;
     font-family: "Inter", Arial, Helvetica, sans-serif;
-    font-size: 3.2rem;
+    font-size: clamp(1.8rem, 3vw, 3.2rem);
+    // font-size: 1.8rem;
     font-weight: 300;
+    background: url("../images/pattern-bg.svg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position: 50% 1em;
+    background-size: 85%;
+    padding: 1.5em;
+    line-height: 1.4;
+}
+
+.john,
+.john-img {
+    display: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 5em 10em;
+}
+
+.img--wrap {
+    position: relative;
+    @include flexCenter(column);
+    margin-top: 1em;
+
+    .tanya-img,
+    .john-img {
+        width: 75%;
+        max-width: min-content;
+    }
+
+    .button--wrap {
+        position: absolute;
+        bottom: 0;
+        transform: translateY(30%);
+
+        // button {
+        //     margin: 0;
+        //     padding: 0;
+        // }
+    }
+}
+
+.quote {
+    grid-row: 3 / 4;
+
+    .quote--wrap {
+        @include flexCenter(column);
+
+        .quote__name--wrap {
+            margin-top: 1em;
+            @include flexCenter(column);
+
+            .quote__name {
+                font-size: 1.6rem;
+            }
+
+            .quote__job {
+                font-weight: 500;
+                color: color(GrayishBlue);
+            }
+        }
+    }
+
+    &__p {
+        text-align: center;
+    }
 }

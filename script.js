@@ -38,7 +38,7 @@ function showSlides(n) {
         dots[i].classList.remove("active");
     }
 
-    //this takes the slide index and subtracts 1 so it can target the proper element in the slides array - because arrays use 0 based indexing
+    //this takes the slide index and subtracts 1 so it can target the proper element in the slides array (because arrays use 0 based indexing) and it displays that element
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].classList.add("active");
 }
