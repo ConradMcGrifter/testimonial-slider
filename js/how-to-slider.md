@@ -4,16 +4,16 @@ showSlides(slideIndex);
 
 // this function is used on the next and prev arrows (it says plusSlides but it can take a negative number to subtract from the slide index)
 function plusSlides(n) {
-    showSlides((slideIndex += n));
+showSlides((slideIndex += n));
 }
 
 //this function is used on the dots
 function currentSlide(n) {
-    showSlides((slideIndex = n));
+showSlides((slideIndex = n));
 }
 
 function showSlides(n) {
-    var i;
+var i;
 
     var slides = document.getElementsByClassName("mySlides"); //this targets the containers that hold the slide image and the caption text and the current slide number
 
@@ -38,4 +38,5 @@ function showSlides(n) {
     //this takes the slide index and subtracts 1 so it can target the proper element in the slides array (because arrays use 0 based indexing) and it displays that element
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].classList.add("active");
+
 }
