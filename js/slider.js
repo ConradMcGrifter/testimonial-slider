@@ -29,9 +29,6 @@ function showSlides(n) {
     }
 
     //this loops over the individual slides and sets display to none
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
 
     //this loops over the individual dots and removesthe active class
     for (i = 0; i < dots.length; i++) {
